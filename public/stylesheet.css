@@ -1,0 +1,99 @@
+/* Body & background */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: 
+    /* Very subtle overlay so image is clear */
+    linear-gradient(rgba(10, 20, 30, 0.2), rgba(10, 20, 30, 0.2)),
+    url('https://images.unsplash.com/photo-1480497490787-505ec076689f?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  color: #e6f0fa; /* global text color */
+}
+
+/* Container styling */
+.container {
+  position: relative;
+  max-width: 900px;
+  margin: 80px auto;
+  /* Remove background color for full transparency */
+  background: transparent;
+  padding: 30px 40px;
+  /* Remove big box shadow */
+  box-shadow: none;
+  /* Keep text centered */
+  text-align: center;
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  color: #d0e7ff; /* light blue for contrast */
+}
+
+/* User cards container */
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Each user card */
+.card {
+  background-color: rgba(10, 20, 30, 0.65); /* translucent dark to separate from bg */
+  border-radius: 12px;
+  padding: 20px;
+  flex: 0 1 280px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* subtle shadow for depth */
+  color: #dbe9f4;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(70, 130, 180, 0.8);
+}
+
+/* Card title and subtitle */
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #aaccff;
+}
+
+/* Links inside card */
+.card-link {
+  color: #87bfff;
+  text-decoration: underline;
+  margin-right: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card-link:last-child {
+  margin-right: 0;
+  color: #ff7f7f; /* soft red accent */
+}
+
+.card-link:hover {
+  color: #d0e7ff;
+}
+
+/* Message when no users */
+.no-users {
+  color: #a8b8d4;
+  font-style: italic;
+  margin-top: 20px;
+}

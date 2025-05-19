@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User List</title>
+  <link rel="stylesheet" href="/stylesheet.css"/>
+</head>
+
+<body>
+
+  <!-- Snow mountain background -->
+  <div class="background">
+    
+  </div>
+  
+  <div class="container">
+    <h2>User Records</h2>
+    <a href="/" class="btn btn-primary" style="margin-bottom: 20px; display: inline-block; color: black; text-decoration: none;">Back to Create</a>
+
+  <!-- <% %> and <%= %>  used for javascript in ejs!  -->
+    <% if (users.length === 0) { %>
+      <h1> No users found</h1>
+    <% } else { %>
+      <div class="cards-wrapper">
+        <% users.forEach(function(user) { %>
+          <div class="card">
+            <h5 class="card-title">Name: <%= user.name %></h5>
+            <h6 class="card-subtitle">Email: <%= user.email %></h6>
+            <div>
+              <a href="/update-data?id=<%= user.id %>" class="card-link">Edit</a>
+              <a href="/delete-data?id=<%= user.id %>" class="card-link">Delete</a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
